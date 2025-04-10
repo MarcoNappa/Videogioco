@@ -31,16 +31,20 @@
   </div>
   <div id="lv1">
     <p>questo è il livello 1 !!!</p>
+    <button id="startBtn" onclick=addLv()>Start Game</button>
   </div>
   <div id="lv2">
-    <p>questo è il livello 2 !!!</p>
+    <p id="textLv2">questo è il livello 2 !!!</p>
+    <button id="cura" onclick=addHealth()>Curati</button>
+    <button id="avanti" onclick=addLv()>Avanza</button>
+    <button id="cura" onclick=backLv()>Torna Indietro</button>
   </div>
-  <button id="startBtn" onclick=changeLv()>Start Game</button>
+  
 
   <script>
 
     let giocatore = {
-      vita: 100,
+      vita: 75,
       armatura: 50,
       atk: 10
     };
@@ -50,14 +54,17 @@
     alert("ricorda l'armatura non equivale alla difesa, calcola la difesa come il valore armatura diviso due !!!");
     alert("La tua effettiva difesa attuale è pari a : " + defTot);
     alert("La tua vita è : " + giocatore.vita + ", il tuo attacco attuale è pari a  " + giocatore.atk + " , l'armatura totale : " + giocatore.armatura + " premi su Start Game per iniziare... ");
-    function addHealth() {
-      giocatore.vita + curaPiccola;
-      alert(curaPiccola);
-    }
-    function changeLv() {
+
+    function addLv() {
       document.getElementById("lv1").style.display = "none";
       document.getElementById("lv2").style.display = "block";
     }
+    function backLv() {
+      document.getElementById("lv2").style.display = "none";
+      document.getElementById("lv1").style.display = "block";
+    }
+
+
     startGame();
   </script>
 </body>
