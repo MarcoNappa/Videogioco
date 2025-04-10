@@ -1,5 +1,5 @@
 @media screen and (max-width : 800px){
-    body{
+    #Game{
         width: 80%;
         margin : 5%;
     }
