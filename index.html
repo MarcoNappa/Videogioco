@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>HTML 5 Boilerplate</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<style>
+  body {
+    margin: 10%;
+  }
+  #lv1{
+    background-color: gold;
+    width: 200px;
+    height: 200px;
+  }
+  #lv2 {
+    display: none;
+    width: 200px;
+    height: 200px;
+    background-color: aquamarine;
+  }
+</style>
+
+<body>
+  <div id="startGame">
+    <h1>Inizio gioco</h1>
+  </div>
+  <div id="lv1">
+    <p>questo è il livello 1 !!!</p>
+  </div>
+  <div id="lv2">
+    <p>questo è il livello 2 !!!</p>
+  </div>
+  <button id="startBtn" onclick=changeLv()>Start Game</button>
+
+  <script>
+
+    let giocatore = {
+      vita: 100,
+      armatura: 50,
+      atk: 10
+    };
+    let defTot = (giocatore.armatura / 2);
+    let vitaTot = (giocatore.armatura / 2);
+    let curaPiccola = (giocatore.vita + 10);
+    alert("ricorda l'armatura non equivale alla difesa, calcola la difesa come il valore armatura diviso due !!!");
+    alert("La tua effettiva difesa attuale è pari a : " + defTot);
+    alert("La tua vita è : " + giocatore.vita + ", il tuo attacco attuale è pari a  " + giocatore.atk + " , l'armatura totale : " + giocatore.armatura + " premi su Start Game per iniziare... ");
+    function addHealth() {
+      giocatore.vita + curaPiccola;
+      alert(curaPiccola);
+    }
+    function changeLv() {
+      document.getElementById("lv1").style.display = "none";
+      document.getElementById("lv2").style.display = "block";
+    }
+    startGame();
+  </script>
+</body>
+
+
+</html>
