@@ -2,72 +2,57 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>HTML 5 Boilerplate</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Choises</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<style>
-  body {
-    margin: 10%;
-  }
-  #lv1{
-    background-color: gold;
-    width: 200px;
-    height: 200px;
-  }
-  #lv2 {
-    display: none;
-    width: 200px;
-    height: 200px;
-    background-color: aquamarine;
-  }
-</style>
 
 <body>
-  <div id="startGame">
-    <h1>Inizio gioco</h1>
-  </div>
-  <div id="lv1">
-    <p>questo è il livello 1 !!!</p>
-    <button id="startBtn" onclick=addLv()>Start Game</button>
-  </div>
-  <div id="lv2">
-    <p id="textLv2">questo è il livello 2 !!!</p>
-    <button id="cura" onclick=addHealth()>Curati</button>
-    <button id="avanti" onclick=addLv()>Avanza</button>
-    <button id="cura" onclick=backLv()>Torna Indietro</button>
-  </div>
-  
 
-  <script>
+    <div id="startGame">
+        <button id="start" onclick="startGame()">Inizia il gioco</button>
+        <h1 id="introMsg" style="display: none;">Ciao, benvenuto nel mio primo gioco testuale.</h1>
+    </div>
 
-    let giocatore = {
-      vita: 75,
-      armatura: 50,
-      atk: 10
-    };
-    let defTot = (giocatore.armatura / 2);
-    let vitaTot = (giocatore.armatura / 2);
-    let curaPiccola = (giocatore.vita + 10);
-    alert("ricorda l'armatura non equivale alla difesa, calcola la difesa come il valore armatura diviso due !!!");
-    alert("La tua effettiva difesa attuale è pari a : " + defTot);
-    alert("La tua vita è : " + giocatore.vita + ", il tuo attacco attuale è pari a  " + giocatore.atk + " , l'armatura totale : " + giocatore.armatura + " premi su Start Game per iniziare... ");
+    <div id="Game">
 
-    function addLv() {
-      document.getElementById("lv1").style.display = "none";
-      document.getElementById("lv2").style.display = "block";
-    }
-    function backLv() {
-      document.getElementById("lv2").style.display = "none";
-      document.getElementById("lv1").style.display = "block";
-    }
+        <div id="lv1" style="display: none;">
+            <p>Ti sei appena svegliato in una stanza di un casolare abbandonato, con la coda dell'occhio scorgi una
+                spaccatura nel muro a sinistra ed una porta di legno pesante a destra che nn hai idea di dove possa
+                condure
+                che fai ?</p>
+            <img id="casolare" src="casolare.jpeg" alt="CASOLARE">
+            <div id="button1">
+                <button id="porta" onclick="portaLv1()" style="display: none;">Apri Porta</button>
+
+                <button id="fessura" onclick="fessuraLv1()" style="display: none;">Passa attraverso la spaccatura del
+                    muro</button>
+            </div>
+        </div>
+
+        <div id="fuga" style="display: none;">
+
+            <p>Aprendo la porta scopri che conduce ad un salone completamente ridotto in macerie, vedi solo una parte
+                del cortile esterno...</p>
+            <img id="imgPorta" src="porta.jpeg" style="display: none;">
+            <button id="fine" onclick="cortile()">Esci</button>
+        </div>
+
+        <div id="mortetxt" style="display: none;">
+            <p>Passi per la fessura e cadi giù in un pozzo nero......................</p>
+            <button id="mortebt" onclick="morte()">Prova ad arrampicarti....</button>
+            <img id="imgMorte" src="morte.png" alt="Sei Morto" style="display: none;">
+        </div>
 
 
-    startGame();
-  </script>
+        <div>
+            <img id="fotoVictory" src="download.jpeg" style="display: none;">
+        </div>
+
+    </div>
 </body>
+<script src="index.js"></script>
 
-
-</html>
+</html
